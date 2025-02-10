@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+.users-button {
+  font-size: 18px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 12px; /* Slightly larger radius for a softer look */
+  background-color: #ffffff; /* Pure white */
+  color: #333333; /* Darker text for better contrast */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-weight: 600; /* Semi-bold text */
+  text-transform: uppercase; /* Uppercase text for a modern look */
+  letter-spacing: 1px; /* Slightly spaced letters */
+}
+
+.users-button:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.users-button:active {
+  transform: translateY(0); /* Reset lift effect when clicked */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow */
+}
+
+.users-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Custom focus ring */
+}
