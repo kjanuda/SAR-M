@@ -1,22 +1,36 @@
-import { Button, Grid2, Input, Typography } from "@mui/material"; // Use Grid2 instead of Grid
+import React, { useState } from "react";
+import { Button, Grid, Input, Typography } from "@mui/material";
 
 const UseForm = (props) => {
+    const [formData, setFormData] = useState({ id: '', name: '' });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = () => {
+        console.log('Form Data:', formData);
+        // You can call props.onSubmit(formData) here if you pass a function from the parent component
+    };
+
     return (
-        <Grid2 
+        <Grid 
             container
             spacing={2}
             sx={{
                 backgroundColor: '#ffffff',
                 marginBottom: '30px',
+                padding: '20px',
             }}
         >
-            <Grid2 item xs={12}>
-                <Typography component={'h1'} sx={{ color: '#000000' }}>
+            <Grid item xs={12}>
+                <Typography component={'h1'} sx={{ color: '#000000', fontSize: '24px' }}>
                     User Form
                 </Typography>
-            </Grid2>
+            </Grid>
 
-            <Grid2 item xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center' }}>
                 <Typography
                     component={'label'}
                     htmlFor="id"
@@ -34,12 +48,12 @@ const UseForm = (props) => {
                     id="id"
                     name="id"
                     sx={{ width: '400px' }}
-                    value={''}
-                    onChange={e => {}}
+                    value={formData.id}
+                    onChange={handleChange}
                 />
-            </Grid2>
+            </Grid>
 
-            <Grid2 item xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center' }}>
                 <Typography
                     component={'label'}
                     htmlFor="name"
@@ -57,29 +71,29 @@ const UseForm = (props) => {
                     id="name"
                     name="name"
                     sx={{ width: '400px' }}
-                    value={''}
-                    onChange={e => {}}
+                    value={formData.name}
+                    onChange={handleChange}
                 />
-            </Grid2>
+            </Grid>
 
-            <Grid2 item xs={12}>
+            <Grid item xs={12}>
                 <Button
                     sx={{
-                        margin: 'auto',
-                        marginBottom: '20px',
-                        backgroundColor: '#00c6e6',
+                        display: 'block',
+                        margin: '20px auto',
+                        backgroundColor: '#009de6',
                         color: '#000000',
-                        marginTop: '20px',
                         '&:hover': {
                             opacity: 0.7,
-                            backgroundColor: '#00c6e6',
+                            backgroundColor: '#009de6',
                         },
                     }}
+                    onClick={handleSubmit}
                 >
                     Add
                 </Button>
-            </Grid2>
-        </Grid2>
+            </Grid>
+        </Grid>
     );
 }
 
