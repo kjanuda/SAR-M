@@ -5,24 +5,24 @@ import UserTable from "./UsersTable";
 const users = [
   {
     id: 1,
-    name: 'januda',
+    name: "januda",
   },
   {
     id: 2,
-    name: 'janandith',
-  }
+    name: "janandith",
+  },
 ];
 
 const Users = () => {
   return (
     <Box
       sx={{
-        width: '100%',  // Adjusted width
-        margin: 'auto',
-        marginTop: '100px'
+        width: "calc(100% - 100px)",
+        margin: "auto",
+        marginTop: "100px",
       }}
     >
-      <UseForm />  {/* Corrected component name */}
+      <UseForm />
       <UserTable rows={users} />
     </Box>
   );
